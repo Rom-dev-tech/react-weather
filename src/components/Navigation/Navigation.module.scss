@@ -1,0 +1,18 @@
+@import '../../styles/shared';
+
+.navigation {
+  padding: 0 40px;
+}
+
+.list {
+  @extend %list;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.links {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
