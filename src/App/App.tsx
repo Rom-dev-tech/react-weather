@@ -12,7 +12,7 @@ const Information = lazy(
 );
 
 const NotFound = lazy(
-  () => import('../pages/NotFound' /* webpackChunkName: "NotFoundView-page" */)
+  () => import('../pages/NotFound' /* webpackChunkName: "NotFound-page" */)
 );
 
 function App() {
