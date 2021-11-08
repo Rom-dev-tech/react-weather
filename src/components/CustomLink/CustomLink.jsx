@@ -1,8 +1,8 @@
+import PropTypes from 'prop-types';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
-import type { LinkProps } from 'react-router-dom';
 import s from '../CustomLink/CustomLink.module.scss';
 
-const CustomLink = ({ children, to, ...props }: LinkProps) => {
+export const CustomLink = ({ children, to, ...props }) => {
   let resolved = useResolvedPath(to);
   let match = useMatch({ path: resolved.pathname, end: true });
 
@@ -17,4 +17,8 @@ const CustomLink = ({ children, to, ...props }: LinkProps) => {
   );
 };
 
-export default CustomLink;
+CustomLink.propTypes = {
+  children: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  props: PropTypes.object,
+};

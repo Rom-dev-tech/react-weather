@@ -1,0 +1,12 @@
+.buttonsList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}

@@ -1,0 +1,52 @@
+.cardWrapper {
+  padding: 20px;
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  background: #4783f1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 20px;
+
+  margin: auto;
+  margin-top: 100px;
+}
+
+.weatherWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.currentWeather {
+  font-size: 96px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+.currentWeatherTitle {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+.city,
+.date {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.icon {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.iconDescriptions,
+.windDescriptions {
+  font-size: 25px;
+  font-style: italic;
+  text-decoration: underline;
+  color: #fff;
+}
