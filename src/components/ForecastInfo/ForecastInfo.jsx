@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { SearchBar } from '../SearchBar/SearchBar';
-import s from '../ForecastInfo/ForecastInfo.module.scss';
+import { SearchBar } from 'components/SearchBar/SearchBar';
+import s from 'components/ForecastInfo/ForecastInfo.module.scss';
 
 export const ForecastInfo = ({ Forecastweather, onChangeSubmit }) => {
   return (

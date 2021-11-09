@@ -1,4 +1,4 @@
-import { Notification } from '../../components/Notification/Notification';
+import { Notification } from 'components/Notification/Notification';
 
 const NotFound = () => {
   return <Notification message="Page not found...." />;

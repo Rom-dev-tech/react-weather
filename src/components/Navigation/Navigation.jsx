@@ -1,7 +1,6 @@
-import { CustomLink } from '../CustomLink/CustomLink';
 import { Link } from 'react-router-dom';
-
-import s from '../Navigation/Navigation.module.scss';
+import { CustomLink } from '../CustomLink/CustomLink';
+import s from 'components/Navigation/Navigation.module.scss';
 
 export const Navigation = () => {
   return (

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import s from '../SearchBar/SearchBar.module.scss';
+import s from 'components/SearchBar/SearchBar.module.scss';
 
 export const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState('');

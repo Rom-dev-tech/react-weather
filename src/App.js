@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { AppBar } from './components/AppBar/AppBar';
-import { Loading } from './components/Loader/Loader';
+import { AppBar } from 'components/AppBar/AppBar';
+import { Loading } from 'components/Loader/Loader';
 
 import './App.css';
 

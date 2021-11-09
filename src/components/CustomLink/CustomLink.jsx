@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
-import s from '../CustomLink/CustomLink.module.scss';
+import s from 'components/CustomLink/CustomLink.module.scss';
 
 export const CustomLink = ({ children, to, ...props }) => {
   let resolved = useResolvedPath(to);

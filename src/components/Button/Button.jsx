@@ -1,19 +1,14 @@
 import PropTypes from 'prop-types';
-import { useNavigate, useLocation } from 'react-router-dom';
-import s from '../Button/Button.module.scss';
+import s from 'components/Button/Button.module.scss';
 
-export const Button = ({ title, order }) => {
-  const navidate = useNavigate();
-  const location = useLocation();
-
+export const Button = ({ title, city, getCity }) => {
   const onButtonClick = () => {
-    if (order === title) {
+    if (city === title) {
       return;
     }
-    navidate({
-      ...location,
-      search: `weatherIn=${title}`,
-    });
+
+    localStorage.setItem('city', JSON.stringify(title));
+    getCity(title);
   };
 
   return (
@@ -25,5 +20,6 @@ export const Button = ({ title, order }) => {
 
 Button.propTypes = {
   title: PropTypes.string.isRequired,
-  order: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  getCity: PropTypes.func.isRequired,
 };

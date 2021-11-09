@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
-
 import moment from 'moment';
-import s from '../InfoDay/InfoDay.module.scss';
+import s from 'components/InfoDay/InfoDay.module.scss';
 
 export const InfoDay = ({ weather }) => {
   const date = moment(Date.now()).format('MMMM Do YYYY');

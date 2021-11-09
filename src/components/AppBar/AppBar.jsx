@@ -1,5 +1,5 @@
-import { Navigation } from '../Navigation/Navigation';
-import s from '../AppBar/AppBar.module.scss';
+import { Navigation } from 'components/Navigation/Navigation';
+import s from 'components/AppBar/AppBar.module.scss';
 
 export const AppBar = () => {
   return (

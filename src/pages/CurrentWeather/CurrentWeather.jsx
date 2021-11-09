@@ -1,46 +1,50 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { ButtonsList } from '../../components/ButtonsList/ButtonsList';
-import { InfoDay } from '../../components/InfoDay/InfoDay';
-import { fetchCurrentWeather } from '../../service/weather-api';
-import { Loading } from '../../components/Loader/Loader';
-import { Notification } from '../../components/Notification/Notification';
+import { ButtonsList } from 'components/ButtonsList/ButtonsList';
+import { InfoDay } from 'components/InfoDay/InfoDay';
+import { fetchCurrentWeather } from 'service/weather-api';
+import { Loading } from 'components/Loader/Loader';
+import { Notification } from 'components/Notification/Notification';
+import helpers from 'Helpers';
 
 const CurrentWeather = () => {
+  const { initialStateCity, Status } = helpers;
+
+  const [city, setCity] = useState(initialStateCity);
   const [weather, setWeather] = useState([]);
   const [error, setError] = useState(false);
-  const [status, setStatus] = useState('idel');
-  const location = useLocation();
-
-  const city = new URLSearchParams(location.search).get('weatherIn') ?? 'Minsk';
+  const [status, setStatus] = useState(Status.IDLE);
 
   useEffect(() => {
-    setStatus('pending');
+    setStatus(Status.PENDING);
 
     fetchCurrentWeather(city)
       .then((data) => {
         setWeather(data);
-        setStatus('resolved');
+        setStatus(Status.RESOLVED);
       })
       .catch((error) => {
         setError({ message: 'Error not found' });
-        setStatus('rejected');
+        setStatus(Status.REJECTED);
       });
-  }, [city]);
+  }, [Status.PENDING, Status.REJECTED, Status.RESOLVED, city]);
 
   if (typeof weather.main === 'undefined') {
     return null;
   }
 
+  const getCity = (city) => {
+    setCity(city);
+  };
+
   return (
     <>
-      {status === 'pending' && <Loading />}
+      {status === Status.PENDING && <Loading />}
 
-      {status === 'rejected' && <Notification message={error.message} />}
+      {status === Status.REJECTED && <Notification message={error.message} />}
 
-      {status === 'resolved' && (
+      {status === Status.RESOLVED && (
         <>
-          <ButtonsList order={city} />
+          <ButtonsList city={city} getCity={getCity} />
           <InfoDay weather={weather} />
         </>
       )}

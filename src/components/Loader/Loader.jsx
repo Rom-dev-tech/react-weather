@@ -1,6 +1,6 @@
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import s from '../../components/Loader/Loader.module.scss';
+import s from 'components/Loader/Loader.module.scss';
 
 export const Loading = () => {
   return (
