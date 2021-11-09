@@ -12,13 +12,12 @@ const CurrentWeather = () => {
   const [status, setStatus] = useState('idel');
   const location = useLocation();
 
-  const order =
-    new URLSearchParams(location.search).get('weatherIn') ?? 'Minsk';
+  const city = new URLSearchParams(location.search).get('weatherIn') ?? 'Minsk';
 
   useEffect(() => {
     setStatus('pending');
 
-    fetchCurrentWeather(order)
+    fetchCurrentWeather(city)
       .then((data) => {
         setWeather(data);
         setStatus('resolved');
@@ -27,7 +26,7 @@ const CurrentWeather = () => {
         setError({ message: 'Error not found' });
         setStatus('rejected');
       });
-  }, [order]);
+  }, [city]);
 
   if (typeof weather.main === 'undefined') {
     return null;
@@ -41,7 +40,7 @@ const CurrentWeather = () => {
 
       {status === 'resolved' && (
         <>
-          <ButtonsList order={order} />
+          <ButtonsList order={city} />
           <InfoDay weather={weather} />
         </>
       )}

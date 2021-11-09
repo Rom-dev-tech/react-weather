@@ -5,10 +5,11 @@ import s from '../InfoDay/InfoDay.module.scss';
 
 export const InfoDay = ({ weather }) => {
   const date = moment(Date.now()).format('MMMM Do YYYY');
+
   return (
     <div className={s.cardWrapper}>
       <h2 className={s.currentWeatherTitle}>Current Weather in</h2>
-      <p className={s.city}>{weather.name}</p>
+      <p className={[s.city, s.date].join(' ')}>{weather.name}</p>
 
       <div className={s.weatherWrapper}>
         <p className={s.currentWeather}>{Math.round(weather.main.temp)}°</p>
@@ -26,6 +27,9 @@ export const InfoDay = ({ weather }) => {
           className={s.windDescriptions}
         >{`Wind speed: ${weather.wind.speed}m/s`}</p>
       </div>
+      <p className={s.date}>
+        feels like {Math.round(weather.main.feels_like)}°
+      </p>
       <p className={s.date}>{date}</p>
     </div>
   );
