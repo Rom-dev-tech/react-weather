@@ -8,7 +8,7 @@ import style from 'components/ForecastInfo/ForecastInfo.module.scss';
 export const ForecastInfo = ({ Forecastweather, onChangeSubmit }) => {
   return (
     <section className={style.section}>
-      <Title title="Forecast Weather 5 Day / 3 Hour  in:" />
+      <Title title="Forecast Weather 5 Day / 3 Hour  in City:" />
 
       <SearchBar onSubmit={onChangeSubmit} />
 

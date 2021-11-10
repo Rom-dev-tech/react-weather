@@ -7,7 +7,7 @@ import style from 'components/CurrentInfo/CurrentInfo.module.scss';
 export const CurrentInfo = ({ weather, getCity, city }) => {
   return (
     <section className={style.section}>
-      <Title title="Current Weather in" />
+      <Title title="Current Weather in City:" />
 
       <ButtonsList city={city} getCity={getCity} />
 
