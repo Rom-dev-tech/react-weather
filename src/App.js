@@ -1,15 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { AppBar } from 'components/AppBar/AppBar';
+import { NavBar } from 'components/NavBar/NavBar';
+import CurrentWeather from 'pages/CurrentWeather/CurrentWeather';
 import { Loading } from 'components/Loader/Loader';
-
-import './App.css';
-
-const CurrentWeather = lazy(() =>
-  import(
-    './pages/CurrentWeather/CurrentWeather' /* webpackChunkName: "Current-Weather-page" */
-  )
-);
 
 const WeatherForecast = lazy(() =>
   import(
@@ -23,19 +16,31 @@ const NotFound = lazy(() =>
 
 function App() {
   return (
-    <>
-      <AppBar />
+    <main>
+      <Routes>
+        <Route path="/" element={<NavBar />}>
+          <Route index element={<CurrentWeather />} />
 
-      <main>
-        <Suspense fallback={<Loading />}>
-          <Routes>
-            <Route index element={<CurrentWeather />} />
-            <Route path="forecast" element={<WeatherForecast />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </main>
-    </>
+          <Route
+            path="forecast"
+            element={
+              <Suspense fallback={<Loading />}>
+                <WeatherForecast />
+              </Suspense>
+            }
+          />
+
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<Loading />}>
+                <NotFound />
+              </Suspense>
+            }
+          />
+        </Route>
+      </Routes>
+    </main>
   );
 }
 
