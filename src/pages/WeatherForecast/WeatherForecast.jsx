@@ -35,7 +35,7 @@ const WeatherForecast = () => {
         setStatus(Status.RESOLVED);
       })
       .catch((error) => {
-        setError({ message: 'Error not found' });
+        setError({ message: 'City not found' });
         setStatus(Status.REJECTED);
       });
   }, [city]);
@@ -49,7 +49,7 @@ const WeatherForecast = () => {
   }
 
   if (status === Status.REJECTED) {
-    <Notification message={error.message} />;
+    return <Notification message={error.message} />;
   }
 
   if (status === Status.RESOLVED) {
