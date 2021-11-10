@@ -8,7 +8,6 @@ export const CardInfo = ({ weather }) => {
 
   return (
     <div className={style.cardWrapper}>
-      <h2 className={style.currentWeatherTitle}>Current Weather in</h2>
       <p className={[style.city, style.date].join(' ')}>{weather.name}</p>
 
       <div className={style.weatherWrapper}>

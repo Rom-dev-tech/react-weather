@@ -9,6 +9,8 @@ export const NavBar = () => {
         <nav className={style.navigation}>
           <Link className={style.logo} to="/"></Link>
 
+          <p className={style.headerTitle}>Weather application</p>
+
           <ul className={style.list}>
             <li className={style.links}>
               <CustomLink to="/">Current</CustomLink>

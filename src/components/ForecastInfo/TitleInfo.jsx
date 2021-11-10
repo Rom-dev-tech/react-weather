@@ -5,7 +5,7 @@ import style from 'components/ForecastInfo/ForecastInfo.module.scss';
 export const TitleInfo = ({ Forecastweather }) => {
   return (
     <>
-      <h1 className={style.forecastTitle}>{Forecastweather.city.name}</h1>
+      <h2 className={style.forecastTitle}>{Forecastweather.city.name}</h2>
 
       <div className={style.forecastInfoThumb}>
         <WeatherIcon
