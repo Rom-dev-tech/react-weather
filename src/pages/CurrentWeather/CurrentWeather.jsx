@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ButtonsList } from 'components/ButtonsList/ButtonsList';
-import { InfoDay } from 'components/InfoDay/InfoDay';
+import { CurrentInfo } from 'components/CurrentInfo/CurrentInfo';
 import { fetchCurrentWeather } from 'service/weather-api';
 import { Loading } from 'components/Loader/Loader';
 import { Notification } from 'components/Notification/Notification';
@@ -46,8 +45,7 @@ const CurrentWeather = () => {
   if (status === Status.RESOLVED) {
     return (
       <>
-        <ButtonsList city={city} getCity={getCity} />
-        <InfoDay weather={weather} />
+        <CurrentInfo weather={weather} getCity={getCity} city={city} />
       </>
     );
   }
