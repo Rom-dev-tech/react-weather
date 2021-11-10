@@ -7,13 +7,13 @@ import './App.css';
 
 const CurrentWeather = lazy(() =>
   import(
-    './pages/CurrentWeather' /* webpackChunkName: "Current-Weather-page" */
+    './pages/CurrentWeather/CurrentWeather' /* webpackChunkName: "Current-Weather-page" */
   )
 );
 
 const WeatherForecast = lazy(() =>
   import(
-    './pages/WeatherForecast' /* webpackChunkName: "Weather-Forecast-page" */
+    './pages/WeatherForecast/WeatherForecast' /* webpackChunkName: "Weather-Forecast-page" */
   )
 );
 

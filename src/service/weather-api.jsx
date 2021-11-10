@@ -11,7 +11,7 @@ export const fetchCurrentWeather = async (city = 'Minsk') => {
     return fetchObject;
   }
 
-  return Promise.reject(new Error(`Error not found`));
+  return Promise.reject(new Error(`Error`));
 };
 
 export const fetchForecastWeather = async (city = 'Minsk') => {
@@ -24,5 +24,5 @@ export const fetchForecastWeather = async (city = 'Minsk') => {
     return fetchObject;
   }
 
-  return Promise.reject(new Error(`Error not found`));
+  return Promise.reject(new Error(`Error`));
 };

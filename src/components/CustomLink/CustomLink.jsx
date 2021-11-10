@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
-import s from 'components/CustomLink/CustomLink.module.scss';
+import style from 'components/CustomLink/CustomLink.module.scss';
 
 export const CustomLink = ({ children, to, ...props }) => {
   let resolved = useResolvedPath(to);
@@ -8,7 +8,7 @@ export const CustomLink = ({ children, to, ...props }) => {
 
   return (
     <Link
-      className={match ? [s.link, s.activeLink].join(' ') : s.link}
+      className={match ? [style.link, style.activeLink].join(' ') : style.link}
       to={to}
       {...props}
     >

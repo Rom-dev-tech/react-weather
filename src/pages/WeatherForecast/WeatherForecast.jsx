@@ -40,24 +40,26 @@ const WeatherForecast = () => {
       });
   }, [city]);
 
-  if (typeof Forecastweather.list === 'undefined') {
+  if (!Forecastweather.list) {
     return null;
   }
 
-  return (
-    <>
-      {status === Status.PENDING && <Loading />}
+  if (status === Status.PENDING) {
+    return <Loading />;
+  }
 
-      {status === Status.REJECTED && <Notification message={error.message} />}
+  if (status === Status.REJECTED) {
+    <Notification message={error.message} />;
+  }
 
-      {status === Status.RESOLVED && (
-        <ForecastInfo
-          Forecastweather={Forecastweather}
-          onChangeSubmit={onChangeSubmit}
-        />
-      )}
-    </>
-  );
+  if (status === Status.RESOLVED) {
+    return (
+      <ForecastInfo
+        Forecastweather={Forecastweather}
+        onChangeSubmit={onChangeSubmit}
+      />
+    );
+  }
 };
 
 export default WeatherForecast;

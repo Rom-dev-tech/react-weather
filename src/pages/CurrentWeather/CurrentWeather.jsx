@@ -4,12 +4,11 @@ import { InfoDay } from 'components/InfoDay/InfoDay';
 import { fetchCurrentWeather } from 'service/weather-api';
 import { Loading } from 'components/Loader/Loader';
 import { Notification } from 'components/Notification/Notification';
-import helpers from 'Helpers';
+import { Status } from 'Helpers/status';
+import { getLocalStorage } from 'utils/getLocalStorage';
 
 const CurrentWeather = () => {
-  const { initialStateCity, Status } = helpers;
-
-  const [city, setCity] = useState(initialStateCity);
+  const [city, setCity] = useState(() => getLocalStorage('Minsk'));
   const [weather, setWeather] = useState([]);
   const [error, setError] = useState(false);
   const [status, setStatus] = useState(Status.IDLE);
@@ -26,9 +25,9 @@ const CurrentWeather = () => {
         setError({ message: 'Error not found' });
         setStatus(Status.REJECTED);
       });
-  }, [Status.PENDING, Status.REJECTED, Status.RESOLVED, city]);
+  }, [city]);
 
-  if (typeof weather.main === 'undefined') {
+  if (!weather.main) {
     return null;
   }
 
@@ -36,20 +35,22 @@ const CurrentWeather = () => {
     setCity(city);
   };
 
-  return (
-    <>
-      {status === Status.PENDING && <Loading />}
+  if (status === Status.PENDING) {
+    return <Loading />;
+  }
 
-      {status === Status.REJECTED && <Notification message={error.message} />}
+  if (status === Status.REJECTED) {
+    return <Notification message={error.message} />;
+  }
 
-      {status === Status.RESOLVED && (
-        <>
-          <ButtonsList city={city} getCity={getCity} />
-          <InfoDay weather={weather} />
-        </>
-      )}
-    </>
-  );
+  if (status === Status.RESOLVED) {
+    return (
+      <>
+        <ButtonsList city={city} getCity={getCity} />
+        <InfoDay weather={weather} />
+      </>
+    );
+  }
 };
 
 export default CurrentWeather;

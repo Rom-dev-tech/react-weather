@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import s from 'components/SearchBar/SearchBar.module.scss';
+import style from 'components/SearchBar/SearchBar.module.scss';
 
 export const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
@@ -23,13 +23,13 @@ export const SearchBar = ({ onSubmit }) => {
   };
 
   return (
-    <form className={s.searchform} onSubmit={handleSubmit}>
-      <button type="submit" className={s.searchformButton}>
-        <span className={s.searchformButtonLabel}>Search</span>
+    <form className={style.searchform} onSubmit={handleSubmit}>
+      <button type="submit" className={style.searchformButton}>
+        <span className={style.searchformButtonLabel}>Search</span>
       </button>
 
       <input
-        className={s.searchformInput}
+        className={style.searchformInput}
         type="text"
         value={query}
         onChange={handleSearchChange}
