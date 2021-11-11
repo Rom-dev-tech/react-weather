@@ -3,11 +3,11 @@ import { CurrentInfo } from 'components/CurrentInfo/CurrentInfo';
 import { fetchCurrentWeather } from 'service/weather-api';
 import { Loading } from 'components/Loader/Loader';
 import { Notification } from 'components/Notification/Notification';
-import { Status } from 'Helpers/status';
-import { getLocalStorage } from 'utils/getLocalStorage';
+import { Status } from 'utils/status';
+import { getCityFromLS, setCityToLS } from 'utils/localStorageUtils';
 
 const CurrentWeather = () => {
-  const [city, setCity] = useState(() => getLocalStorage('Minsk'));
+  const [city, setCity] = useState(() => getCityFromLS('Minsk'));
   const [weather, setWeather] = useState([]);
   const [error, setError] = useState(false);
   const [status, setStatus] = useState(Status.IDLE);
@@ -30,8 +30,9 @@ const CurrentWeather = () => {
     return null;
   }
 
-  const getCity = (city) => {
-    setCity(city);
+  const onSelectCity = (selectedCity) => {
+    setCityToLS(selectedCity);
+    setCity(selectedCity);
   };
 
   if (status === Status.PENDING) {
@@ -45,7 +46,7 @@ const CurrentWeather = () => {
   if (status === Status.RESOLVED) {
     return (
       <>
-        <CurrentInfo weather={weather} getCity={getCity} city={city} />
+        <CurrentInfo weather={weather} setCity={onSelectCity} city={city} />
       </>
     );
   }

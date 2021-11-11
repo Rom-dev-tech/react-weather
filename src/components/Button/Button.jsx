@@ -1,20 +1,9 @@
 import PropTypes from 'prop-types';
-import { setLocalStorage } from 'utils/setLocalStorage';
 import style from 'components/Button/Button.module.scss';
 
-export const Button = ({ title, city, getCity }) => {
-  const onButtonClick = () => {
-    if (city === title) {
-      return;
-    }
-
-    setLocalStorage(title);
-
-    getCity(title);
-  };
-
+export const Button = ({ title, onClick }) => {
   return (
-    <button className={style.button} type="button" onClick={onButtonClick}>
+    <button className={style.button} type="button" onClick={onClick}>
       {title}
     </button>
   );
@@ -22,6 +11,5 @@ export const Button = ({ title, city, getCity }) => {
 
 Button.propTypes = {
   title: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
-  getCity: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };

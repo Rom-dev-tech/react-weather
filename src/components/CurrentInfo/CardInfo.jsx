@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { WeatherIcon } from 'components/WeatherIcon/WeatherIcon';
-import { showDate } from 'Helpers/showDate';
+import { showDate } from 'utils/showDate';
 import style from 'components/CurrentInfo/CurrentInfo.module.scss';
 
 export const CardInfo = ({ weather }) => {

@@ -4,7 +4,7 @@ import { fetchForecastWeather } from 'service/weather-api';
 import { ForecastInfo } from 'components/ForecastInfo/ForecastInfo';
 import { Loading } from 'components/Loader/Loader';
 import { Notification } from 'components/Notification/Notification';
-import { Status } from 'Helpers/status';
+import { Status } from 'utils/status';
 
 const WeatherForecast = () => {
   const [Forecastweather, setForecastweather] = useState([]);
