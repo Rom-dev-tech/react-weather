@@ -1,5 +1,7 @@
+@import '../../styles/shared.scss';
+
 .currentWeatherTitle {
   font-size: 30px;
-  color: #4783f1;
+  color: $accent-color;
   text-align: center;
 }

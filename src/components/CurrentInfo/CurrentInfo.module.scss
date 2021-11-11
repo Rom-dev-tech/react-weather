@@ -1,3 +1,5 @@
+@import '../../styles/shared';
+
 .section {
   padding: 100px 0;
 }
@@ -6,13 +8,9 @@
   padding: 20px;
   max-width: 700px;
   width: 100%;
-  background: #fff;
-  background: linear-gradient(
-    180deg,
-    rgba(28, 153, 223, 0.57) 2.08%,
-    rgba(50, 181, 255, 0.1482) 81.77%
-  );
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: $white;
+  background: $backgroun-accent;
+  box-shadow: $boxShadow;
   border-radius: 20px;
 
   margin: auto;
@@ -28,19 +26,19 @@
 .currentWeather {
   font-size: 96px;
   font-weight: 500;
-  color: #fff;
+  color: $white;
   margin: 0;
 }
 
 .date {
-  color: #ccc;
+  color: $grey;
   font-size: 25px;
   font-weight: 500;
   text-align: center;
   font-weight: 700;
 
   &.city {
-    color: #4783f1;
+    color: $accent-color;
     font-size: 30px;
   }
 }
@@ -50,5 +48,5 @@
   font-size: 25px;
   font-style: italic;
   text-decoration: underline;
-  color: #fff;
+  color: $white;
 }

@@ -1,3 +1,5 @@
+@import '../../styles/shared.scss';
+
 .searchform {
   padding-top: 20px;
   display: flex;
@@ -20,14 +22,14 @@
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.6;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity $timing-function;
   cursor: pointer;
   outline: none;
 
   &:hover,
   &:focus {
     opacity: 1;
-    background-color: #fff;
+    background-color: $white;
   }
 }
 
@@ -54,13 +56,13 @@
   padding-left: 4px;
   padding-right: 4px;
   padding: 10px;
-  background-color: #fff;
-  color: #000;
+  background-color: $white;
+  color: $black;
 }
 
 .searchformInput::placeholder {
   font: inherit;
   font-size: 16px;
-  color: #000;
+  color: $black;
   opacity: 0.3;
 }
