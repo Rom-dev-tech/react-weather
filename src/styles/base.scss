@@ -1,11 +1,5 @@
 @import './shared.scss';
 
-html {
-  box-sizing: border-box;
-  width: 100vw;
-  overflow-x: hidden;
-}
-
 *,
 *::before,
 *::after {
@@ -20,10 +14,4 @@ body {
   background-color: $white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }

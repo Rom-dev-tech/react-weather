@@ -31,7 +31,7 @@ const CurrentWeather = () => {
   const [city, setCity] = useState<string>(getCityFromLS());
   const [weather, setWeather] = useState<IWeather>();
   const [error, setError] = useState<string>('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     setIsLoading(true);

@@ -1,7 +1,22 @@
-import { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { NavBar } from '../components/NavBar/NavBar';
+import { Loading } from '../components/Loader/Loader';
 import CurrentWeather from '../pages/CurrentWeather/CurrentWeather';
+
+const WeatherForecast = lazy(
+  () =>
+    import(
+      '../pages/WeatherForecast/WeatherForecast' /* webpackChunkName: "Weather-Forecast-page" */
+    )
+);
+
+const NotFound = lazy(
+  () =>
+    import(
+      '../pages/NotFound/NotFound' /* webpackChunkName: "Not-Found-page" */
+    )
+);
 
 function App() {
   return (
@@ -13,8 +28,8 @@ function App() {
           <Route
             path="forecast"
             element={
-              <Suspense fallback={<p>Loading</p>}>
-                <>...</>
+              <Suspense fallback={<Loading />}>
+                <WeatherForecast />
               </Suspense>
             }
           />
@@ -22,8 +37,8 @@ function App() {
           <Route
             path="*"
             element={
-              <Suspense fallback={<p>Loading</p>}>
-                <>...</>
+              <Suspense fallback={<Loading />}>
+                <NotFound />
               </Suspense>
             }
           />
