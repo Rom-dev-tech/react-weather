@@ -9,22 +9,22 @@ export type IWeather = {
   weather: [
     {
       id: number;
-      description: string;
-      icon: string;
+      description?: string;
+      icon?: string;
     }
   ];
 
   main: {
-    temp: number;
-    feels_like: number;
+    temp?: number;
+    feels_like?: number;
   };
 
   wind: {
-    speed: number;
+    speed?: number;
   };
-  dt: number;
+  dt?: number;
   id: number;
-  name: string;
+  name?: string;
 };
 
 const CurrentWeather = () => {

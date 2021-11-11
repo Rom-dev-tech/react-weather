@@ -8,27 +8,27 @@ import { Notification } from '../../components/Notification/Notification';
 export type IForecastWeather = {
   list: [
     {
-      dt: 1636664400;
+      dt?: number;
       main: {
-        temp: 0.86;
-        feels_like: -3.39;
+        temp?: number;
+        feels_like?: number;
       };
       weather: [
         {
-          id: 804;
-          description: 'overcast clouds';
-          icon: '04n';
+          id: number;
+          description?: string;
+          icon?: string;
         }
       ];
       wind: {
-        speed: 4.25;
+        speed?: number;
       };
-      dt_txt: '2021-11-11 21:00:00';
+      dt_txt?: string;
     }
   ];
   city: {
-    id: 625144;
-    name: 'Minsk';
+    id: number;
+    name?: string;
   };
 };
 
