@@ -1,6 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
 import { CustomLink } from '../CustomLink/CustomLink';
-import style from 'components/NavBar/NavBar.module.scss';
+import style from '../NavBar/NavBar.module.scss';
 
 export const NavBar = () => {
   return (
