@@ -1,10 +1,6 @@
 import { WeatherIcon } from '../WeatherIcon/WeatherIcon';
-import { IForecastWeather } from '../../pages/WeatherForecast/WeatherForecast';
+import { TitleInfiProps } from '../../types/types';
 import style from '../ForecastInfo/ForecastInfo.module.scss';
-
-type TitleInfiProps = {
-  Forecastweather: IForecastWeather;
-};
 
 export const TitleInfo = ({ Forecastweather }: TitleInfiProps) => {
   return (

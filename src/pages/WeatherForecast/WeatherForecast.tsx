@@ -4,33 +4,7 @@ import { fetchForecastWeather } from '../../service/weather-api';
 import { ForecastInfo } from '../../components/ForecastInfo/ForecastInfo';
 import { Loading } from '../../components/Loader/Loader';
 import { Notification } from '../../components/Notification/Notification';
-
-export type IForecastWeather = {
-  list: [
-    {
-      dt?: number;
-      main: {
-        temp?: number;
-        feels_like?: number;
-      };
-      weather: [
-        {
-          id: number;
-          description?: string;
-          icon?: string;
-        }
-      ];
-      wind: {
-        speed?: number;
-      };
-      dt_txt?: string;
-    }
-  ];
-  city: {
-    id: number;
-    name?: string;
-  };
-};
+import { IForecastWeather } from '../../types/types';
 
 const WeatherForecast = () => {
   const [Forecastweather, setForecastweather] = useState<IForecastWeather>();

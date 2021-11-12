@@ -1,9 +1,5 @@
+import { ButtonProps } from '../../types/types';
 import style from '../Button/Button.module.scss';
-
-type ButtonProps = {
-  title: string;
-  onClick: () => void;
-};
 
 export const Button = ({ title, onClick }: ButtonProps) => {
   return (

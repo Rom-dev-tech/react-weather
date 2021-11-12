@@ -1,4 +1,4 @@
-const DEFAULT_CITY = 'Minsk';
+import { DEFAULT_CITY } from '../Constants/Constants';
 
 export const setCityToLS = (title: string) =>
   localStorage.setItem('city', title);

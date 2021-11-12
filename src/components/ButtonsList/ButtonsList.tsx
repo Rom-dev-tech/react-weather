@@ -1,11 +1,7 @@
 import { Button } from '../Button/Button';
+import { cities } from '../../Constants/Constants';
+import { ButtonsListProps } from '../../types/types';
 import style from '../ButtonsList/ButtonsList.module.scss';
-
-type ButtonsListProps = {
-  city: string;
-  setCity: (city: string) => void;
-};
-const cities = ['Minsk', 'Moscow', 'Bratislava', 'Kiev'];
 
 export const ButtonsList = ({ city, setCity }: ButtonsListProps) => {
   const onButtonClick = (selectedCity: string): void => {

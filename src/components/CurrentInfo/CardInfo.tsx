@@ -1,15 +1,9 @@
 import { WeatherIcon } from '../WeatherIcon/WeatherIcon';
-import { showDate } from '../../utils/showDate';
-import { IWeather } from '../../pages/CurrentWeather/CurrentWeather';
+import { date } from '../../Constants/Constants';
+import { CardInfoProps } from '../../types/types';
 import style from '../CurrentInfo/CurrentInfo.module.scss';
 
-type CardInfoProps = {
-  weather: IWeather;
-};
-
 export const CardInfo = ({ weather }: CardInfoProps) => {
-  const date: string = showDate();
-
   return (
     <div className={style.cardWrapper}>
       {weather.name && (

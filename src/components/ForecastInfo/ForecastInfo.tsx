@@ -2,13 +2,8 @@ import { SearchBar } from '../SearchBar/SearchBar';
 import { TitleInfo } from '../ForecastInfo/TitleInfo';
 import { CardsGalleryInfo } from '../ForecastInfo/CardsGalleryInfo';
 import { Title } from '../Title/Title';
-import { IForecastWeather } from '../../pages/WeatherForecast/WeatherForecast';
+import { ForecastInfoProps } from '../../types/types';
 import style from '../ForecastInfo/ForecastInfo.module.scss';
-
-type ForecastInfoProps = {
-  Forecastweather: IForecastWeather;
-  onChangeSubmit: (query: string) => void;
-};
 
 export const ForecastInfo = ({
   Forecastweather,

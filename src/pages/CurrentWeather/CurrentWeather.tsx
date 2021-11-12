@@ -4,28 +4,7 @@ import { fetchCurrentWeather } from '../../service/weather-api';
 import { Loading } from '../../components/Loader/Loader';
 import { Notification } from '../../components/Notification/Notification';
 import { setCityToLS, getCityFromLS } from '../../utils/localStorageUtils';
-
-export type IWeather = {
-  weather: [
-    {
-      id: number;
-      description?: string;
-      icon?: string;
-    }
-  ];
-
-  main: {
-    temp?: number;
-    feels_like?: number;
-  };
-
-  wind: {
-    speed?: number;
-  };
-  dt?: number;
-  id: number;
-  name?: string;
-};
+import { IWeather } from '../../types/types';
 
 const CurrentWeather = () => {
   const [city, setCity] = useState<string>(getCityFromLS());

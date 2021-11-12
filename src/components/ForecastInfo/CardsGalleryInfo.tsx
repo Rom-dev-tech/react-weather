@@ -1,10 +1,6 @@
 import { WeatherIcon } from '../WeatherIcon/WeatherIcon';
-import { IForecastWeather } from '../../pages/WeatherForecast/WeatherForecast';
+import { CardsGalleryInfoProps } from '../../types/types';
 import style from '../ForecastInfo/ForecastInfo.module.scss';
-
-type CardsGalleryInfoProps = {
-  Forecastweather: IForecastWeather;
-};
 
 export const CardsGalleryInfo = ({
   Forecastweather,

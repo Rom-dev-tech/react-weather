@@ -1,9 +1,5 @@
+import { WeatherIconProps } from '../../types/types';
 import defaultIcon from '../../images/logo.png';
-
-type WeatherIconProps = {
-  src?: string;
-  alt?: string;
-};
 
 export const WeatherIcon = ({ src, alt }: WeatherIconProps) => {
   return (

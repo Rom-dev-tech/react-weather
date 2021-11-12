@@ -1,5 +1,4 @@
-const BASE_URL = 'http://api.openweathermap.org/data/2.5/';
-const API_KEY = '57a90a8fcac701e57c9c008de996f569';
+import { API_KEY, BASE_URL } from '../Constants/Constants';
 
 export const fetchCurrentWeather = async (city: string) => {
   const url = `${BASE_URL}weather?q=${city}&units=metric&appid=${API_KEY}`;

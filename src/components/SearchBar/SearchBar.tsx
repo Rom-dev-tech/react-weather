@@ -1,9 +1,6 @@
 import { useState } from 'react';
+import { SearchBarProps } from '../../types/types';
 import style from '../SearchBar/SearchBar.module.scss';
-
-type SearchBarProps = {
-  onSubmit: (query: string) => void;
-};
 
 export const SearchBar = ({ onSubmit }: SearchBarProps) => {
   const [query, setQuery] = useState('');
