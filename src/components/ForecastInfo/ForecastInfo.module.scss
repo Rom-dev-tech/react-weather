@@ -1,0 +1,48 @@
+@import '../../styles/shared.scss';
+
+.section {
+  padding: 100px 0;
+  background: $backgroun-accent;
+
+  box-shadow: $boxShadow;
+  border-radius: 5px;
+}
+
+.forecastTitle {
+  font-size: 30px;
+  margin-top: 0;
+  padding-top: 20px;
+  text-align: center;
+  color: $accent-color;
+}
+
+.forecastInfoThumb {
+  text-align: center;
+}
+
+.list {
+  @extend %list;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.item {
+  min-width: 150px;
+  &:not(:last-child) {
+    margin-right: 14px;
+  }
+
+  margin-bottom: 20px;
+
+  padding: 10px;
+
+  background: $backgroun-accent;
+
+  box-shadow: $boxShadow;
+  border-radius: 5px;
+}

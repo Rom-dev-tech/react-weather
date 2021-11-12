@@ -1,0 +1,68 @@
+@import '../../styles/shared.scss';
+
+.searchform {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+
+  border-radius: 6px;
+  margin: 0 auto;
+}
+
+.searchformButton {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-right: 20px;
+  border: 0;
+  border-radius: 10px;
+  background-image: url('../../images/find.svg');
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  transition: opacity $timing-function;
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+    background-color: $white;
+  }
+}
+
+.searchformButtonLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.searchformInput {
+  display: inline-block;
+  width: 100%;
+  font: inherit;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding: 10px;
+  background-color: $white;
+  color: $black;
+}
+
+.searchformInput::placeholder {
+  font: inherit;
+  font-size: 16px;
+  color: $black;
+  opacity: 0.3;
+}

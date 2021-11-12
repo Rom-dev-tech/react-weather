@@ -1,0 +1,53 @@
+@import '../../styles/shared.scss';
+
+.header {
+  position: fixed;
+  min-width: 100%;
+  background-color: $white;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: $boxShadow;
+}
+
+.headerTitle {
+  margin: 0;
+  font-weight: 700;
+  font-size: 30px;
+  color: $accent-color;
+
+  margin-right: auto;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.list {
+  @extend %list;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.links {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.logo {
+  background: url('../../images/logo.png');
+  width: 65px;
+  height: 65px;
+  margin: 5px 10px 5px 5px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
