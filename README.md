@@ -1,4 +1,6 @@
-# In the project directory, you can run:
+# Weather application
+
+In the project directory, you can run:
 
 ### `npm start`
 
