@@ -1,10 +1,14 @@
 @import '../../styles/shared';
 
 .link {
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
   font-weight: 700;
   color: inherit;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 28px;
+  }
 
   &.activeLink {
     color: $accent-color;

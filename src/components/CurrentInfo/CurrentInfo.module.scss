@@ -1,20 +1,22 @@
 @import '../../styles/shared';
 
 .section {
-  padding: 100px 0;
+  padding: 100px 15px;
 }
 
 .cardWrapper {
   padding: 20px;
-  max-width: 700px;
-  width: 100%;
+
   background: $white;
   background: $backgroun-accent;
   box-shadow: $boxShadow;
   border-radius: 20px;
 
-  margin: auto;
-  margin-top: 100px;
+  @media screen and (min-width: $tablet) {
+    margin: auto;
+    margin-top: 100px;
+    max-width: 700px;
+  }
 }
 
 .weatherWrapper {
@@ -45,8 +47,13 @@
 
 .iconDescriptions,
 .windDescriptions {
-  font-size: 25px;
+  font-size: 18px;
+
   font-style: italic;
   text-decoration: underline;
   color: $white;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 25px;
+  }
 }

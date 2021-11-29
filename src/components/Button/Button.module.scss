@@ -2,4 +2,11 @@
 
 .button {
   @extend %button;
+  min-width: 30px;
+  font-size: 14px;
+
+  @media screen and (min-width: $tablet) {
+    min-width: 120px;
+    font-size: 20px;
+  }
 }

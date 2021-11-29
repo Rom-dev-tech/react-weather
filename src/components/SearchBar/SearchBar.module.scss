@@ -1,13 +1,12 @@
 @import '../../styles/shared.scss';
 
 .searchform {
-  padding-top: 20px;
   display: flex;
   align-items: center;
   max-width: 400px;
-
   border-radius: 6px;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .searchformButton {

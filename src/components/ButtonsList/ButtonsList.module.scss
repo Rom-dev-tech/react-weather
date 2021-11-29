@@ -1,14 +1,24 @@
+@import '../../styles/shared';
+
 .buttonsList {
-  margin: 0;
   list-style: none;
+  padding-left: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 0px 0px 0px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 20px 0px 0px 0px;
+  }
 }
 
 .button {
   &:not(:last-child) {
-    margin-right: 30px;
+    margin-right: 10px;
+
+    @media screen and (min-width: $tablet) {
+      margin-right: 30px;
+    }
   }
 }

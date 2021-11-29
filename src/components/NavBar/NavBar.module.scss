@@ -16,30 +16,45 @@
 .headerTitle {
   margin: 0;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 18px;
   color: $accent-color;
-
+  max-width: 100px;
   margin-right: auto;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 28px;
+  }
 }
 
 .navigation {
+  padding: 0 20px;
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0 40px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 0 40px;
+  }
 }
 
 .list {
   @extend %list;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding-left: 0;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .links {
   &:not(:last-child) {
-    margin-right: 30px;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $tablet) {
+      margin: 0 30px 0 0;
+    }
   }
 }
 
@@ -47,7 +62,11 @@
   background: url('../../images/logo.png');
   width: 65px;
   height: 65px;
-  margin: 5px 10px 5px 5px;
+  margin: 5px;
   background-position: center;
   background-repeat: no-repeat;
+
+  @media screen and (min-width: $tablet) {
+    margin: 5px 10px 5px 5px;
+  }
 }
