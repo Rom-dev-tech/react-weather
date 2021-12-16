@@ -14,7 +14,7 @@ const WeatherForecast = () => {
   const location = useLocation();
   const navidate = useNavigate();
 
-  const city = new URLSearchParams(location.search).get('weatherIn') ?? 'Minsk';
+  const city = new URLSearchParams(location.search).get('weatherIn') ?? 'Kiev';
 
   const onChangeSubmit = (query: string) => {
     if (query === city) {
